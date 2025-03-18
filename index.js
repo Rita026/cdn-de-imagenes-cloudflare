@@ -1,13 +1,11 @@
-const express = require('express');
-const cors = require('cors'); // Importa CORS
-const routes = require('./src'); // O la ruta que usas para configurar tus rutas
-const app = express();
-const puerto = 3000;
+// Importa React para poder utilizar JSX y ReactDOM para renderizar la aplicación
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+// Importa el componente principal App
+import App from './App';
+// Importa los estilos generales de la aplicación
+import './App.css';
 
-app.use(cors()); // Habilita CORS para todas las rutas
-
-routes(app); // Configura las rutas de mi API
-
-app.listen(puerto, () => {
-    console.log(`Servidor ejecutándose en el puerto ${puerto}`);
-});
+// Crea la raíz de la aplicación y renderiza el componente App dentro del elemento con id "root"
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
